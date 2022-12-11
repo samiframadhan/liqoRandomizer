@@ -5,9 +5,10 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - name: MS Teams Notification
-        uses: skitionek/notify-microsoft-teams@master
+        uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
         if: always()
-        env:
-          MSTEAMS_WEBHOOK: ${{ secrets.MSTEAMS_WEBHOOK }}
+        with:
+          webhook: ${{ secrets.MSTEAMS_WEBHOOK }}
+          message: 'Please works!'
