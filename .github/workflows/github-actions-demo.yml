@@ -7,8 +7,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: MS Teams Notification
-        uses: dhollerbach/actions.send-message-to-ms-teams@1.0.10
+        uses: skitionek/notify-microsoft-teams@master
         if: always()
         with:
-          webhook: ${{ secrets.MSTEAMS_WEBHOOK }}
-          message: 'Please works!'
+          webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
+          needs: ${{ toJson(needs) }}
+          job: ${{ toJson(job) }}
+          steps: ${{ toJson(steps) }}
