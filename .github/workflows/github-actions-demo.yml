@@ -10,7 +10,7 @@ jobs:
         uses: skitionek/notify-microsoft-teams@master
         if: always()
         with:
-          webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
+          webhook_url: https://isrsi.webhook.office.com/webhookb2/8ec17c06-c985-4136-be5b-95ff995be6fe@c58c4404-70a4-4367-9e74-12323749b030/IncomingWebhook/ee9099eea0c440edb2ff3aa68d3ff4ee/0674fe0a-b121-4d6e-970c-8e803c0864da
           needs: ${{ toJson(needs) }}
           job: ${{ toJson(job) }}
           steps: ${{ toJson(steps) }}
