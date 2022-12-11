@@ -11,5 +11,3 @@ jobs:
         if: always()
         with:
           webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
-        env:
-          MSTEAMS_WEBHOOK: ${{ secrets.MSTEAMS_WEBHOOK }}
