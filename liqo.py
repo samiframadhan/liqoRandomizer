@@ -4,6 +4,7 @@ import itertools
 nama = ['Sami', 'Fawwaz', 'Faiz', 'Rifki', 'Azzam', 'Rijal']
 tugas = ['MC', 'Tilawah', 'Doa', 'Materi']
 jadwal = []
+# Add a comment
 
 data = random.sample(nama, len(tugas))
 jadwal.append(data)
