@@ -2,14 +2,15 @@ name: Testing MS Teams Integration
 run-name: ${{ github.actor }} is testing out MS Teams Integration 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - name: MS Teams Notification
-        uses: skitionek/notify-microsoft-teams@master
-        if: always()
-        with:
-          webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
-        env:
-          MSTEAMS_WEBHOOK: ${{ secrets.MSTEAMS_WEBHOOK }}
+  success:
+    name: Try ms teams integration
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@master
+        - name: MS Teams Notification
+          uses: skitionek/notify-microsoft-teams@master
+          if: always()
+          with:
+            webhook_url: ${{ secrets.MSTEAMS_WEBHOOK }}
+          env:
+            MSTEAMS_WEBHOOK: ${{ secrets.MSTEAMS_WEBHOOK }}
