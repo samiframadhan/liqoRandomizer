@@ -3,6 +3,7 @@ run-name: ${{ github.actor }} is testing out MS Teams Integration 🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
+    if: github.event.head_commit.message == 'report'
     environment: Microsoft Teams
     runs-on: ubuntu-latest
     steps:
@@ -11,7 +12,6 @@ jobs:
         uses: skitionek/notify-microsoft-teams@master
         env:
           MSTEAMS_WEBHOOK: ${{ secrets.MSTEAMS_WEBHOOK }}
-        if: always()
         with:
           needs: ${{ toJson(needs) }}
           job: ${{ toJson(job) }}
